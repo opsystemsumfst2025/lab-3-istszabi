@@ -25,21 +25,12 @@ int main() {
         // SZÜLŐ folyamat
         printf("[Szülő] A gyerekem PID-je: %d\n", pid);
         
-        // ===== FIGYELEM! =====
-        // Próbáld ki ELŐSZÖR úgy, hogy ez a rész kommentezve van!
-        // Akkor zombie lesz a gyerek.
-        // 
-        // MÁSODSZOR uncomment-eld ki ezt:
-        /*
-        printf("[Szülő] Megvárom a gyereket...\n");
-        wait(NULL);
-        printf("[Szülő] A gyerek befejeződött, nincs több zombie!\n");
-        */
+        // Itt hívjuk meg a wait-et:
+        printf("[Szülő] Megvárom a gyereket (wait)... \n");
+        wait(NULL); 
+        printf("[Szülő] A gyerek befejeződött, begyűjtöttem a státuszát. Nincs zombi!\n");
         
-        // =====================
-        
-        printf("[Szülő] Alszok 10 másodpercig...\n");
-        printf("[Szülő] (Közben nyiss egy másik terminált és nézd meg: ps aux | grep defunct)\n");
+        printf("[Szülő] Alszok még 10 másodpercig a teszt kedvéért...\n");
         sleep(10);
         
         printf("[Szülő] Felébredtem, vége.\n");

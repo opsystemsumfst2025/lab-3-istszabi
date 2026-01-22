@@ -1,0 +1,55 @@
+1. feladat
+A kimenetben mindig a szulo jelenik meg elobb.
+
+2. feladat 
+Ha nincs wait(), a gyerek processz zombikent (<defunct>) ragad a rendszerben, mert a szulo nem olvassa ki a kilepesi kodjat. wait() hasznalataval a szulo szepen bevarja, es a gyerek azonnal eltunik a folyamattablabol.
+ istsz 5405 0.0 0.0 0 0 pts/2 Z+ 15:26 0:00 [zombie_demo] <defunct>
+
+3. feladat
+
+1.futtatas:
+Várt érték:    200 000
+Kapott érték:  180203
+
+2.futtatas:
+Várt érték:    200 000
+Kapott érték:  200000
+
+3.futtatas:
+Várt érték:    200 000
+Kapott érték:  161243
+
+4.futtatas:
+Várt érték:    200 000
+Kapott érték:  128367
+
+5.futtatas:
+Várt érték:    200 000
+Kapott érték:  140219
+
+A counter++ nem atomi, mert tobb gepi utasitasbol all (Olvasas: temp = counter , noveles: temp = temp + 1 , iras: counter = temp)
+
+4. feladat
+
+Kezdőérték: 0
+Mindkét folyamat 100 000-szer növeli (SZINKRONIZÁLTAN)...
+
+[Szülő] Készen vagyok!
+[Gyerek] Készen vagyok!
+
+=================================
+Várt érték:    200 000
+Kapott érték:  200000
+=================================
+
+✓ HELYES! A szemafor megvédte a kritikus szakaszt!
+
+
+Hazi feladat: Ping-Pong valtakozas
+Ket szemaforral (sem_parent=1, sem_child=0) sikerult megoldani a ping-pongot.
+PING #1
+PONG #1
+PING #2
+PONG #2
+EOF
+
